@@ -33,6 +33,14 @@ const Home = () => {
                 Drag & Drop
               </Link>
             </li>
+            <li className="mb-2">
+              <Link
+                to="/drag-drop-upload"
+                className="text-lg font-medium border-b border-b-slate-700"
+              >
+                Drag & Drop with Upload
+              </Link>
+            </li>
           </ul>
         </nav>
       </main>

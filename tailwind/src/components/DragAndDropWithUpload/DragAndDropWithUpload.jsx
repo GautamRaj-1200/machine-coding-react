@@ -8,11 +8,16 @@ const DragAndDropWithUpload = () => {
   const validateFile = (file) => {
     const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
 
-    if (!allowedTypes.includes(file?.type)) {
+    if (!file) {
+      setFileError("Please select a file");
+      return false;
+    }
+
+    if (!allowedTypes.includes(file.type)) {
       setFileError("Only JPG, PNG and PDF files are allowed");
       return false;
     }
-    if (file?.size > 5 * 1024 * 1024) {
+    if (file.size > 5 * 1024 * 1024) {
       setFileError("File size must be less than 5 MB");
       return false;
     }
@@ -78,7 +83,9 @@ const DragAndDropWithUpload = () => {
         />
 
         <p className="text-slate-400">or drag and drop here</p>
-
+        <p className="text-sm text-slate-400">
+          Supported formats: JPG, PNG, PDF (max 5MB)
+        </p>
         {uploadedFile && (
           <div className="flex flex-col items-center gap-2">
             <p>{uploadedFile.name}</p>

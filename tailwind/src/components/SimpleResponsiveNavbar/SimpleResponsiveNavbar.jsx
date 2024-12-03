@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SimpleResponsiveNavbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(false);
@@ -15,6 +16,12 @@ const SimpleResponsiveNavbar = () => {
     document.body.style.overflow = "auto";
   };
 
+  const handleLinkClick = () => {
+    // Close the navbar and restore body scroll when a link is clicked on mobile
+    if (window.innerWidth < 768) {
+      handleNavbarClose();
+    }
+  };
   return (
     <header className="relative p-4 text-xl text-gray-300 bg-slate-800">
       <nav className="w-[90%] mx-auto flex md:flex-row flex-col md:gap-0 gap-6 justify-between items-center">
@@ -64,29 +71,33 @@ const SimpleResponsiveNavbar = () => {
           `}
         >
           <li className="my-4 md:my-0">
-            <a href="#" className="hover:text-white">
+            <Link to="#" className="hover:text-white" onClick={handleLinkClick}>
               Home
-            </a>
+            </Link>
           </li>
           <li className="my-4 md:my-0">
-            <a href="#" className="hover:text-white">
+            <Link to="#" className="hover:text-white" onClick={handleLinkClick}>
               About
-            </a>
+            </Link>
           </li>
           <li className="my-4 md:my-0">
-            <a href="#" className="hover:text-white">
+            <Link to="#" className="hover:text-white" onClick={handleLinkClick}>
               Contact
-            </a>
+            </Link>
           </li>
           <li className="my-4 md:my-0">
-            <a href="#" className="hover:text-white">
+            <Link to="#" className="hover:text-white" onClick={handleLinkClick}>
               Pricing
-            </a>
+            </Link>
           </li>
           <li className="my-4 md:my-0">
-            <a href="#" className="hover:text-white">
+            <Link
+              href="#"
+              className="hover:text-white"
+              onClick={handleLinkClick}
+            >
               Explore
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

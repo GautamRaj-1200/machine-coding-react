@@ -16,16 +16,16 @@ const SimpleResponsiveNavbar = () => {
   };
 
   return (
-    <header className="p-4 bg-indigo-600 text-xl text-gray-300 relative">
+    <header className="relative p-4 text-xl text-gray-300 bg-slate-800">
       <nav className="w-[90%] mx-auto flex md:flex-row flex-col md:gap-0 gap-6 justify-between items-center">
         <h1 className="text-3xl font-bold">
           <a href="/">Brand Logo</a>
         </h1>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden absolute left-2 z-50">
+        <div className="absolute z-50 md:hidden left-2">
           <button
-            className={`border bg-red-500 py-1 px-2 absolute left-2 ${
+            className={`border py-1 px-2 absolute left-2 ${
               navbarVisible
                 ? "opacity-0 pointer-events-none"
                 : "opacity-100 pointer-events-auto"
@@ -35,7 +35,7 @@ const SimpleResponsiveNavbar = () => {
             Open
           </button>
           <button
-            className={`border bg-green-500 py-1 px-2 absolute left-2 ${
+            className={`border py-1 px-2 absolute left-2 ${
               !navbarVisible
                 ? "opacity-0 pointer-events-none"
                 : "opacity-100 pointer-events-auto"
@@ -53,7 +53,7 @@ const SimpleResponsiveNavbar = () => {
             fixed md:relative
             top-0 left-0 right-0 bottom-0
             md:top-auto md:left-auto
-            bg-indigo-600 
+            bg-slate-800 
             w-full h-full
             md:w-auto md:h-auto
             transform transition-transform duration-300 ease-in-out
@@ -63,27 +63,27 @@ const SimpleResponsiveNavbar = () => {
             z-40
           `}
         >
-          <li className="md:my-0 my-4">
+          <li className="my-4 md:my-0">
             <a href="#" className="hover:text-white">
               Home
             </a>
           </li>
-          <li className="md:my-0 my-4">
+          <li className="my-4 md:my-0">
             <a href="#" className="hover:text-white">
               About
             </a>
           </li>
-          <li className="md:my-0 my-4">
+          <li className="my-4 md:my-0">
             <a href="#" className="hover:text-white">
               Contact
             </a>
           </li>
-          <li className="md:my-0 my-4">
+          <li className="my-4 md:my-0">
             <a href="#" className="hover:text-white">
               Pricing
             </a>
           </li>
-          <li className="md:my-0 my-4">
+          <li className="my-4 md:my-0">
             <a href="#" className="hover:text-white">
               Explore
             </a>
